@@ -131,7 +131,7 @@ const Weather = () => {
           </div>
         )}
         <div className='footer'>
-          {/* <p>&copy; 2024 Asanda Madondo. Weather App. All rights reserved.</p> */}
+          
         </div>
       </div>
     </>
