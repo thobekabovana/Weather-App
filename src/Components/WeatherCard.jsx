@@ -40,7 +40,7 @@ const Weather = () => {
  
   const search = async (city) => {
     if (city === '') {
-      alert("Search city or weekday");
+      alert("Search city or weekdays");
       return;
     }
     try {
@@ -102,7 +102,7 @@ const Weather = () => {
         <h1 className='font-bold tracking-wide text-3xl' >Weather Application</h1>
 
         <nav className='w-full flex justify-between items-center'>
-          <input ref={inputRef} type='text' placeholder='Search' />
+          <input ref={inputRef} type='text' placeholder='Search city or weekday' />
           <img src={search_icon} alt='Search' onClick={() => search(inputRef.current.value)} />
         </nav>
 
