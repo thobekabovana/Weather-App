@@ -40,21 +40,19 @@ const Weather = () => {
  
   const search = async (city) => {
     if (city === '') {
-      alert("Search");
+      alert("Search city or weekday");
       return;
     }
     try {
-      const apiKey = import.meta.env.VITE_APP_ID;
-      if (!apiKey) {
-        throw new Error('API key is not defined');
-      }
+      const apiKey = import.meta.env.VITE_APP_DAY;
+      
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
       
       const response = await fetch(url);
       if (!response.ok) {
         const data = await response.json();
-        if (data.message === 'city not found') {
-          alert("Please enter the correct city name");
+        if (data.message === 'city/weekday not found') {
+          alert("Please enter the correct city name or valid weekday");
         } else {
           alert("Error fetching data. Please try again.");
         }
